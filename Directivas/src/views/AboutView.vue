@@ -104,12 +104,14 @@ span {
 }
 
 input {
+  position: relative;
+  width: 200px;
   padding: 10px 20px;
   margin: 8px 0;
   border: 6px solid rgb(36, 179, 124);
   border-radius: 4px;
   color: rgb(0, 0, 0);
-  transition: 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   box-sizing: border-box;
 }
 
@@ -117,7 +119,6 @@ input:focus {
   border: 6px solid rgb(26, 97, 70);
   outline: none;
   width: 90%;
-  transition: all 0.5s;
 }
 
 select {
