@@ -1,3 +1,5 @@
+# La actividad del formulario se encuentra en la vista AboutView.vue
+
 # Directivas
 
 This template should help get you started developing with Vue 3 in Vite.
