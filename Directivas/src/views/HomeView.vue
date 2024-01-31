@@ -12,12 +12,18 @@ const errors = ref([{
 const error:Ref<string> = ref ('#d03');
 
 const validation = () => {
+
+  errors.value = [];
+
   if(name.value.length < 5) {
     errors.value.push({name:'Error de longitud', age:''});
   }
 }
 
 const validation2 = () => {
+
+  errors.value = [];
+
   if(age.value < 5) {
     errors.value.push({name:'', age:'Error de edad'});
   }
@@ -39,7 +45,7 @@ const validation2 = () => {
 
     <h3>Errors:</h3>
     <span v-for="(err, index) in errors" :key="index">      
-        {{ err }}
+        {{ err }} + {{ index }}
     </span>
   </main>
 </template>
