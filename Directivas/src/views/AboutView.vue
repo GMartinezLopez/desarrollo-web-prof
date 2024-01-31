@@ -3,9 +3,9 @@ import { ref } from 'vue';
 import type { Ref } from 'vue';
 
 const selectedOption: Ref<string> = ref('1'); // Valor predeterminado
-const name: Ref<string> = ref('Ricardo');
-const apellido: Ref<string> = ref('Anaya');
-const age: Ref<number> = ref(21);
+const name: Ref<string> = ref('');
+const apellido: Ref<string> = ref('');
+const age: Ref<number> = ref(1);
 const genero: Ref<string> = ref('Helicóptero apache');
 const errors = ref([{
   name: '',
@@ -43,21 +43,25 @@ const validation = () => {
 
 <template>
   <main>
-    <div class="about">
+    <div>
       <h1>Actividad: Fromulario</h1>
     </div>
-    <div @input="validation()">
+    <div @input="validation()" class="container">
       <div>
-        <input v-model="name" type="text">
+        <h3>Nombre:</h3>
+        <input v-model="name" type="text" placeholder="Nombre...">
       </div>
       <div>
-        <input v-model="apellido" type="text">
+        <h3>Apellido:</h3>
+        <input v-model="apellido" type="text" placeholder="Apellido...">
       </div>
       <div>
-        <input v-model="age" type="text">
+        <h3>Edad:</h3>
+        <input v-model="age" type="text" placeholder="Edad...">
       </div>
       <div>
         <div>
+          <h3>Género:</h3>
           <select v-model="selectedOption">
             <option value="1">Masculino</option>
             <option value="2">Femenino</option>
@@ -65,14 +69,16 @@ const validation = () => {
           </select>
         </div>
         <div>
-          <input v-model="genero" type="text" :disabled="selectedOption != '3'">
+          <h3>Especificar en caso de otro:</h3>
+          <input v-model="genero" type="text" :disabled="selectedOption != '3'" placeholder="Género...">
         </div>
       </div>
-
-      <h3>Errors:</h3>
-      <span v-for="(err, index) in errors" :key="index">
-        {{ err }}
-      </span>
+      <div class="errContainer">
+        <h3>Errors:</h3>
+        <span v-for="(err, index) in errors" :key="index">
+          {{ err }}
+        </span>
+      </div>
     </div>
   </main>
 </template>
@@ -83,4 +89,41 @@ const validation = () => {
   background-color: red;
   border: 1px solid white;
 }
-</style>
+
+.container {
+  background-color: rgb(241, 241, 241);
+  padding: 10px;
+}
+
+h3 {
+  color: black;
+}
+
+span {
+  color: black;
+}
+
+input {
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 6px solid rgb(36, 179, 124);
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  transition: 0.4s ease-in-out;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border: 6px solid rgb(26, 97, 70);
+  outline: none;
+  width: 90%;
+  transition: all 0.5s;
+}
+
+select {
+  width: 100%;
+  padding: 10px 20px;
+  border: 3px solid rgb(36, 179, 124);
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+}</style>
