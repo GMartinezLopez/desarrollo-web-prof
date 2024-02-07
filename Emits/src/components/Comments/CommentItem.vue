@@ -11,9 +11,8 @@
     </div>
 </template>
 <script setup lang="ts">
-import { IComment } from '@/interfaces/IComment';
+import type { IComment } from '@/interfaces/IComment';
     const props = defineProps<IComment>();
-
 </script>
 <style scoped>
 .card {
