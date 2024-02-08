@@ -17,12 +17,13 @@ import type { IComment } from '@/interfaces/IComment';
 const props = defineProps<IComment>();
 const emits = defineEmits(['vistaWaos', 'sayGoodBye']);
 
-const clicked = () => {
-    emits('vistaWaos', props.id);
-}
+// const clicked = () => {
+//     emits('vistaWaos', props.id);
+// }
 
 const clicked2 = () => {
     emits('sayGoodBye', props.id);
+    
 }
 
 </script>
