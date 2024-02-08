@@ -1,11 +1,8 @@
 <template>
   <div>
+    <button @click="clicked"></button>
     <ul>
-      <CommentItem
-        v-bind="comments"
-        v-for="(comments, index) in CommentsData"
-        :key="index"
-      />
+      <CommentItem v-bind="comments" v-for="(comments, index) in CommentsData" :key="index" />
     </ul>
   </div>
 </template>
@@ -13,6 +10,11 @@
 <script setup lang="ts">
 import CommentsData from '@/data/CommentsData'
 import CommentItem from './CommentItem.vue'
+
+const clicked = () => {
+    alert("Hola desde el padre");
+}
+
 </script>
 <style scoped></style>
 
