@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="clicked"></button>
+    <button @click="clicked($event)">CLICKEAME</button>
     <ul>
-      <CommentItem v-bind="comments" v-for="(comments, index) in CommentsData" :key="index" />
+      <CommentItem @say-good-bye="clicked($event)" v-bind="comments" v-for="(comments, index) in CommentsData" :key="index" />
     </ul>
   </div>
 </template>
@@ -11,8 +11,10 @@
 import CommentsData from '@/data/CommentsData'
 import CommentItem from './CommentItem.vue'
 
-const clicked = () => {
-    alert("Hola desde el padre");
+const clicked = (event: any) => {
+  console.log(event);
+  
+    alert('Seleccionaste: ' + event);
 }
 
 </script>
