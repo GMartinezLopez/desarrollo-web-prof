@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="clicked($event)">CLICKEAME</button>
+    <button @click="clicked($event)">PUCHAME</button>
     <ul>
       <CommentItem @say-good-bye="clicked($event)" v-bind="comments" v-for="(comments, index) in CommentsData" :key="index" />
     </ul>
