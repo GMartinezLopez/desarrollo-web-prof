@@ -8,7 +8,7 @@
             <h2>{{ props.title }}</h2>
             <p>{{ props.body }}</p>
         </span>     
-        <button v-on:click="clicked2()">PUCHAME</button>
+        <button v-on:click="clicked2()">CLICKEAME</button>
     </div>
 </template>
 <script setup lang="ts">
