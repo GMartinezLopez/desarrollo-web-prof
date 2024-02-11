@@ -4,10 +4,8 @@ import CommentsList from './components/Comments/CommentsList.vue';
 </script>
 
 <template>
-  <header>
-    
+  <header>    
   </header>
-
   <main>
     <CommentsList></CommentsList>
   </main>
