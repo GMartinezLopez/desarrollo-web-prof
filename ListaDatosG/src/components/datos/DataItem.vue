@@ -7,24 +7,27 @@
         </span>
         <span>
             <h3>Edad: {{ props.age }}</h3>
-            <h3>Genero: {{ props.gender }}</h3>
+            <h3>Genero: {{ props.gender }} {{ visual }}</h3>
+
         </span>
         <br /><br /><br /><br />
         <h3>Universidad Tecnológica de Cancún</h3>
         <div class="fotoContainer">
-            <img class="foto" src="../../images/fotos/pfp-glasses.jpg" /><br />
-            <button @click="clicked()" class="btnFoto">Mostrar / Ocultar</button>
+            <div class="cortina"><img v-if="visual == true" class="foto hidden" src="../../images/fotos/pfp-glasses.jpg" /></div>           
+            <button @click="visual=!visual" class="btnFoto">Mostrar / Ocultar</button>
         </div>
     </div>
 </template>
 <script setup lang="ts">
 import type { InterInfo } from '@/interfaces/InterInfo'
+import { ref } from 'vue';
 
 const props = defineProps<InterInfo>()
+var visual = ref(true) ;
 
-const clicked = () => { }
+
 </script>
-<style scoped>
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
 h1 {
@@ -53,6 +56,13 @@ h3 {
     animation: 3s infinite  ease-out breathing-color;
 }
 
+.card span, h1, h2,h3 {
+
+    animation: color-changing 5s linear;
+	animation-iteration-count: infinite;    
+
+} 
+
 .fotoContainer {
     width: fit-content;
     position: relative;
@@ -63,9 +73,7 @@ h3 {
 
 .foto {
     width: 11rem;
-    box-shadow:
-        0 12px 16px 0 rgba(0, 0, 0, 0.5),
-        0 17px 50px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.5),0 17px 50px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btnFoto {
@@ -97,6 +105,49 @@ h3 {
     transform: translateY(4px);
 }
 
+.cortina {
+    
+    border: 1px solid red;    
+}
+
+@keyframes color-changing {
+    100%,
+        0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+
+
 @keyframes breathing-color {
     from
     {
@@ -104,7 +155,7 @@ h3 {
     }
     to
     {
-        box-shadow: 20px 40px 240px 60px rgba(29, 29, 29, 0);
+        box-shadow: 0px 0px 0px 30px rgba(29, 29, 29, 0);
     }
 }
 </style>
