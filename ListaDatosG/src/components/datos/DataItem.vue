@@ -7,13 +7,13 @@
         </span>
         <span>
             <h3>Edad: {{ props.age }}</h3>
-            <h3>Genero: {{ props.gender }} {{ visual }}</h3>
+            <h3>Genero: {{ props.gender }}</h3>
 
         </span>
         <br /><br /><br /><br />
         <h3>Universidad Tecnológica de Cancún</h3>
         <div class="fotoContainer">
-            <div class="cortina"><img v-if="visual == true" class="foto hidden" src="../../images/fotos/pfp-glasses.jpg" /></div>           
+            <div v-if="visual == true" class="cortina "><img class="foto" src="../../images/fotos/pfp-glasses.jpg" /></div>           
             <button @click="visual=!visual" class="btnFoto">Mostrar / Ocultar</button>
         </div>
     </div>
@@ -24,7 +24,6 @@ import { ref } from 'vue';
 
 const props = defineProps<InterInfo>()
 var visual = ref(true) ;
-
 
 </script>
 <style lang="scss" scoped>
@@ -48,20 +47,11 @@ h3 {
     font-family: 'Quicksand', sans-serif;
     color: #22ffa3;
     background-color: #003531;
-    --border: 1px solid red;
     border-radius: 22px;
     padding: 2rem;
     margin: 10px;
-    --box-shadow: 0 10px 50px #999 ;
     animation: 3s infinite  ease-out breathing-color;
 }
-
-.card span, h1, h2,h3 {
-
-    animation: color-changing 5s linear;
-	animation-iteration-count: infinite;    
-
-} 
 
 .fotoContainer {
     width: fit-content;
@@ -103,48 +93,11 @@ h3 {
     background-color: #e32424;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+
 }
 
 .cortina {
-    
     border: 1px solid red;    
-}
-
-@keyframes color-changing {
-    100%,
-        0%{
-			color: rgb(255,0,0);
-		}
-		8%{
-			color: rgb(255,127,0);
-		}
-		16%{
-			color: rgb(255,255,0);
-		}
-		25%{
-			color: rgb(127,255,0);
-		}
-		33%{
-			color: rgb(0,255,0);
-		}
-		41%{
-			color: rgb(0,255,127);
-		}
-		50%{
-			color: rgb(0,255,255);
-		}
-		58%{
-			color: rgb(0,127,255);
-		}
-		75%{
-			color: rgb(127,0,255);
-		}
-		83%{
-			color: rgb(255,0,255);
-		}
-		91%{
-			color: rgb(255,0,127);
-		}
 }
 
 
