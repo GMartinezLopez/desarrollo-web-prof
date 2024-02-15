@@ -3,10 +3,10 @@ import { RouterLink } from 'vue-router'
 import DataItem from '@/components/datos/DataItem.vue'
 import DataInfo01 from '@/data/DataInfo01'
 import DataInfo02 from '@/data/DataInfo02'
-import DataInfo03 from '@/data/DataInfo02'
-import DataInfo04 from '@/data/DataInfo02'
-import DataInfo05 from '@/data/DataInfo02'
-import DataInfo06 from '@/data/DataInfo02'
+import DataInfo03 from '@/data/DataInfo03'
+import DataInfo04 from '@/data/DataInfo04'
+import DataInfo05 from '@/data/DataInfo05'
+import DataInfo06 from '@/data/DataInfo06'
 
 
 const vistaActual01 = false;

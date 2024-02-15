@@ -13,7 +13,7 @@
         <br /><br /><br /><br />
         <h3>Universidad Tecnológica de Cancún</h3>
         <div class="fotoContainer">
-            <div v-if="visual == true" class="cortina "><img class="foto" src="../../images/fotos/pfp-glasses.jpg" /></div>           
+            <div v-if="visual == true" class="cortina"><img class="foto" src="../../images/fotos/pfp-glasses.jpg" /></div>           
             <button @click="visual=!visual" class="btnFoto">Mostrar / Ocultar</button>
         </div>
     </div>
@@ -97,7 +97,7 @@ h3 {
 }
 
 .cortina {
-    border: 1px solid red;    
+    --border: 1px solid red;    
 }
 
 
