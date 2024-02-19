@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script lang="ts">
+// import { HomeView } from "./HomeView.vue";
+
+
+</script>
+
 <style>
 
 </style>

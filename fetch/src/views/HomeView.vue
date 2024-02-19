@@ -64,6 +64,7 @@ export default defineComponent({
           this.users.push({ username: this.registerData.username, password: this.registerData.password });
           this.registerSuccess = true;
           this.registerError = '';
+          console.log(this.users);
         } else {
           this.registerError = 'El usuario ya existe';
         }
@@ -94,6 +95,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+hr {
+  margin: 20px;
+}
 .error {
   color: red;
 }
