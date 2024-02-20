@@ -8,23 +8,22 @@
         <span>
             <h3>Edad: {{ props.age }}</h3>
             <h3>Genero: {{ props.gender }}</h3>
-
         </span>
         <br /><br /><br /><br />
         <h3>Universidad Tecnológica de Cancún</h3>
         <div class="fotoContainer">
-            <div v-if="visual == true" class="cortina"><img class="foto" src="../../images/fotos/pfp-glasses.jpg" /></div>           
-            <button @click="visual=!visual" class="btnFoto">Mostrar / Ocultar</button>
+            <div v-if="visual == true" class="cortina">
+                <img class="foto" src="../../images/fotos/pfp-glasses.jpg" />
+            </div>
+            <button @click="visual = !visual" class="btnFoto">Mostrar / Ocultar</button>
         </div>
     </div>
 </template>
 <script setup lang="ts">
 import type { InterInfo } from '@/interfaces/InterInfo'
-import { ref } from 'vue';
-
+import { ref } from 'vue'
 const props = defineProps<InterInfo>()
-var visual = ref(true) ;
-
+var visual = ref(true)
 </script>
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
@@ -50,7 +49,7 @@ h3 {
     border-radius: 22px;
     padding: 2rem;
     margin: 10px;
-    animation: 3s infinite  ease-out breathing-color;
+    animation: 3s infinite ease-out breathing-color;
 }
 
 .fotoContainer {
@@ -63,7 +62,9 @@ h3 {
 
 .foto {
     width: 11rem;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.5),0 17px 50px 0 rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 12px 16px 0 rgba(0, 0, 0, 0.5),
+        0 17px 50px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btnFoto {
@@ -93,21 +94,18 @@ h3 {
     background-color: #e32424;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-
 }
 
 .cortina {
-    --border: 1px solid red;    
+    --border: 1px solid red;
 }
 
-
 @keyframes breathing-color {
-    from
-    {
+    from {
         box-shadow: 0 0px 0px 0px hsl(162, 100%, 32%);
     }
-    to
-    {
+
+    to {
         box-shadow: 0px 0px 0px 30px rgba(29, 29, 29, 0);
     }
 }
