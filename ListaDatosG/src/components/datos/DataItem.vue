@@ -15,7 +15,7 @@
             <div v-if="visual == true" class="cortina">
                 <img class="foto" src="../../images/fotos/pfp-glasses.jpg" />
             </div>
-            <button @click="visual = !visual" class="btnFoto">Mostrar / Ocultar</button>
+            <button @click="visual = !visual" class="btnFoto">Mostrar / Ocultar prueba</button>
         </div>
     </div>
 </template>
