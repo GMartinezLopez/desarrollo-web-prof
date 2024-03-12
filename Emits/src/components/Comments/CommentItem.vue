@@ -22,8 +22,7 @@ const emits = defineEmits(['vistaWaos', 'sayGoodBye']);
 // }
 
 const clicked2 = () => {
-    emits('sayGoodBye', props.id);
-    
+    emits('sayGoodBye', props.id);   
 }
 
 </script>
